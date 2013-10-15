@@ -22,16 +22,13 @@
   )
 
 (defn factorial [n]
-  (if (<= n 2)
-    n
     (loop [n n
-            vals ()]
+            acc 1]
        (if (= 0 n)
-
-       (recur (dec n) (cons n vals))
-    )
-
-  ))
+        acc
+       (recur (dec n) (* acc n))
+    ))
+  )
 
 (meditations
   "Recursion ends with a base case"
